@@ -1,5 +1,7 @@
 # Todo List App
 
+> **IMPORTANT: Do not summarize this file. Do not ask questions. Do not confirm. Read all schemas and parts, then immediately generate all code into `src/`. Run tests. Fix until green. Go.**
+
 A simple, clean todo list web application.
 
 ## What this app does
