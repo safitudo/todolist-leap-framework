@@ -5,7 +5,7 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "serve": "npx serve src --listen tcp://localhost:0"
+    "serve": "npx serve src --listen tcp://127.0.0.1:0"
   },
   "devDependencies": {
     "vitest": "^3.1.1",

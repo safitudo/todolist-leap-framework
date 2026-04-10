@@ -42,10 +42,13 @@ Data flows one way: UI calls logic, logic uses store, UI re-renders from state.
 
 ## Tech constraints
 
-- Vanilla TypeScript, no frameworks
+- Vanilla TypeScript for source files in `src/`, no frameworks
 - Single page, no routing
 - No external runtime dependencies
-- Must work by opening index.html in a browser (no server required)
+- `src/` must be self-contained — all generated code lives in `src/`, no imports from outside `src/`
+- Copy any needed type definitions directly into the generated files (do not import from `schemas/`)
+- `src/index.html` must load plain `.js` files, not `.ts` — browsers cannot execute TypeScript
+- Generated `.ts` files are for tests only; the browser entry point must be `.js`
 - Generated code goes in `src/`
 
 ## Generation rules
@@ -53,9 +56,11 @@ Data flows one way: UI calls logic, logic uses store, UI re-renders from state.
 - Each part is independent — generate them in any order
 - Read the part's `schema.ts` for the exact interface to implement
 - Read the part's `master.md` for behavioral details
-- The shared types in `schemas/types.ts` are the canonical source of truth
+- The shared types in `schemas/types.ts` are the canonical source of truth for contracts, but generated code must not import from `schemas/` — inline the types
 - After generating all parts, create `src/app.ts` that wires them together
-- Create `src/index.html` as the entry point
+- Create `src/app.js` (plain JavaScript) as the browser entry point
+- Create `src/index.html` that loads `app.js` via `<script type="module">`
+- All `.js` files in `src/` must work directly in the browser with no build step
 
 ## Verification
 
