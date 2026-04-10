@@ -1,0 +1,14 @@
+{
+  "name": "todolist-leap-framework",
+  "version": "0.1.0",
+  "description": "A todo app where code is a commodity. Only prompts, schemas, and tests are source of truth.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^3.1.1",
+    "jsdom": "^26.0.0",
+    "typescript": "^5.8.3"
+  }
+}
