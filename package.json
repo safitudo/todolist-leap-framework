@@ -4,7 +4,8 @@
   "description": "A todo app where code is a commodity. Only prompts, schemas, and tests are source of truth.",
   "scripts": {
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "serve": "npx serve src --listen tcp://localhost:0"
   },
   "devDependencies": {
     "vitest": "^3.1.1",

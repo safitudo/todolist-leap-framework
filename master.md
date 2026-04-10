@@ -15,13 +15,16 @@ A simple, clean todo list web application.
 
 ## How this project works
 
-This project contains no application code. You are the compiler.
+This project contains no application code. You are the compiler. Do not ask questions — just build it.
 
 1. Read the schemas in `schemas/` — these define the contracts between parts
 2. Read each part in `parts/` — each has a `master.md` prompt and a `schema.ts` contract
 3. Generate code into `src/` that satisfies each part's contract
 4. Wire the parts together in `src/app.ts` and `src/index.html`
-5. Run the tests in `tests/` to verify correctness
+5. Run `npm install`, then run `npm test` to verify correctness
+6. If tests fail, fix the generated code until they pass
+
+Start generating immediately after reading all schemas and parts.
 
 ## Architecture
 
@@ -59,3 +62,11 @@ After generation, run:
 npm test
 ```
 All tests must pass. If they don't, fix the generated code until they do.
+
+## Running the app
+
+```
+npm run serve
+```
+
+This serves `src/` on a random available port and opens the app in the browser.
